@@ -1,6 +1,6 @@
 "use client"
 
-import { post } from "@/services/api";
+import { postFile } from "@/services/api";
 import useGet from "@/services/useGet";
 import { useRef, useState } from "react"
 import { toast } from "react-hot-toast";
@@ -37,7 +37,7 @@ export default function Uploads () {
 
         payload.append("file", file);
 
-        const { data, status } = await post("/api/files/upload", payload);
+        const { data, status } = await postFile("/api/files/upload", payload);
 
         if (status === 201) {
             toast.success(data.message);
