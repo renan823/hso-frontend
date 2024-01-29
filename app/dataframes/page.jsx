@@ -47,23 +47,23 @@ export default function Dataframes () {
     }
 
     return (
-        <div>
-            <div>
-                <h2 className="text-2xl">Selecione um arquivo para editar/visualizar</h2>
-                <div>
-                    <select onChange={handleSelectFile}>
-                        <option value="none">Escolher arquivo...</option>
+        <div className="flex flex-col p-5">
+            <div className="flex mx-10 border-2 border-violet-800 p-4 rounded-md my-4 items-center justify-around shadow-md shadow-purple-500">
+                <h2 className="text-2xl font-bold">Selecione um arquivo para editar/visualizar:</h2>
+                <div className="flex gap-14 bg-purple-500 w-fit px-4 py-3 rounded-md my-1 shadow-md shadow-purple-700">
+                    <select onChange={handleSelectFile} className="text-white text-lg bg-purple-500 font-bold">
+                        <option value="none" className="font-bold text-lg">Escolher arquivo...</option>
                         {
-                            files.map((file, index) => <option key={index} value={file}>{file}</option>)
+                            files.map((file, index) => <option className="font-bold text-lg" key={index} value={file}>{file}</option>)
                         }
                     </select>
-                    <button onClick={handleShowDataframe}>Selecionar</button>
+                    <button className="bg-purple-700 p-2 text-white font-bold rounded-sm" onClick={handleShowDataframe}>Selecionar</button>
                 </div>
             </div>
-            <div>
+            <div className="flex mx-10 justify-center items-center my-4 border-2 border-violet-800 p-4 rounded-md shadow-md shadow-purple-500">
                 {
                     !dataframe ? 
-                        <p>Selecione um arquivo</p>
+                        <h1 className="text-lg font-bold">Escolha um arquivo...</h1>
                     :
                         <DataframeEditor data={dataframe}/>
                 }

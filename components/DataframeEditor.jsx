@@ -48,13 +48,18 @@ export default function DataframeEditor ({ data }) {
                     <div className="flex justify-between">
                         <div>
                             <p>Digite o nome de uma coluna para excluí-la</p>
-                            <input type="text" placeholder="coluna1..." onChange={handleInputChange}/>
+                            <select onChange={handleInputChange}>
+                                <option value="">Escolher coluna</option>
+                                {
+                                    columns.map((column, index) => <option key={index} value={column}>{column}</option>)
+                                }
+                            </select>
                         </div>
                         <button onClick={handleDeleteColumn}>Aplicar</button>
                     </div>
                 </div>
             </div>
-            <div className="flex p-4 bg-white">
+            <div className="flex justify-center p-4 bg-white">
                 <table className="table bg-slate-600 p-3">
                     <thead className="p-4 bg-slate-600">
                         <tr>
