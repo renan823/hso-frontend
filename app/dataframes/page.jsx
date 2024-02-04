@@ -57,7 +57,7 @@ export default function Dataframes () {
                             files.map((file, index) => <option className="font-bold text-lg" key={index} value={file}>{file}</option>)
                         }
                     </select>
-                    <button className="bg-purple-700 p-2 text-white font-bold rounded-sm" onClick={handleShowDataframe}>Selecionar</button>
+                    <button className="bg-purple-700 p-2 text-white text-lg font-bold rounded-sm" onClick={handleShowDataframe}>Selecionar</button>
                 </div>
             </div>
             <div className="flex mx-10 justify-center items-center my-4 border-2 border-violet-800 p-4 rounded-md shadow-md shadow-purple-500">
