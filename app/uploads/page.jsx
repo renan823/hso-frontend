@@ -58,27 +58,29 @@ export default function Uploads () {
     }
 
     return (
-        <div className="flex justify-center mt-auto">
-            <div>
-                <div className="flex shadow-md shadow-violet-600 rounded-md">
-                    <div className="flex flex-col bg-purple-600 p-4 justify-center items-center rounded-tl-md rounded-bl-md">
-                        <form className="flex flex-col" onSubmit={handleSubmit}>
-                            <h1 className="text-white text-2xl font-bold">Upload de arquivos</h1>
-                            <div className="my-5 p-2">
-                                <input className="font-bold" type="file" onChange={handleFileChange} ref={fileRef}/>
-                                { isLoading || isError ? <p></p> : <p className="text-white font-bold">Extensões permitidas: {data.join(" ")}</p>}
+        <div className="flex justify-center mt-auto items-center m-10 gap-5">
+            <div className="m-10">
+                <div className="flex shadow-md bg-purple-600 shadow-violet-600 rounded-md">
+                    <div className="flex flex-colpy-2 px-10 justify-center items-center rounded-lg">
+                        <form className="flex flex-col p-2" onSubmit={handleSubmit}>
+                            <div>
+                                <h1 className="text-white text-2xl my-3 font-bold">Upload de arquivos</h1>
+                                <div className="my-5 p-2">
+                                    <input className="font-bold" type="file" onChange={handleFileChange} ref={fileRef}/>
+                                    { isLoading || isError ? <p></p> : <p className="text-white font-bold">Extensões permitidas: {data.join(" ")}</p>}
+                                </div>
                             </div>
-                            <div className="flex justify-center my-4">
-                                <button className="bg-white px-6 py-2 rounded-md font-bold" type="submit">Enviar</button>
+                            <div className="flex justify-center m-4 items-center">
+                                <button className="bg-white px-8 text-lg py-2 h-fit rounded-md font-bold" type="submit">Enviar</button>
                             </div>
                         </form>
                     </div>
-                    <div className="flex flex-col bg-violet-500 py-4 px-10 justify-center items-center rounded-tr-md rounded-br-md">
-                        <h1 className="text-white font-bold text-2xl">Acompanhe o envio de arquivos</h1>
-                        <div className="my-3">
-                            <UploadsChart/>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div className="m-10">
+                <div className="flex flex-col w-fit bg-violet-500 shadow-md shadow-violet-700 py-4 px-10 justify-center rounded-md">
+                    <h1 className="text-white font-bold text-2xl">Acompanhe o envio de arquivos</h1>
+                    <UploadsChart/>
                 </div>
             </div>
         </div>
